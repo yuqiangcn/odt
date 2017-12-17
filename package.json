@@ -1,0 +1,28 @@
+{
+  "name": "node-odt",
+  "version": "0.0.1",
+  "description": ".odt generator working with templates and data (like Mustache)",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuqiangcn/odt.git"
+  },
+  "keywords": [
+    "odt",
+    "templates",
+    "generation"
+  ],
+  "author": "YU Qiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuqiangcn/odt/issues"
+  },
+  "homepage": "https://github.com/yuqiangcn/odt#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "jszip": "^3.1.5"
+  }
+}
