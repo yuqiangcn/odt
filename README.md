@@ -1,7 +1,7 @@
 
 # node-odt
 
-.odt generator working with templates and data (like Mustache)
+OpenDocument Text(.odt) generator working with templates and data (like Mustache)
 
 ## Install
 
