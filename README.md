@@ -1,12 +1,12 @@
 
-# node-odt-template
+# node-odt
 
 .odt generator working with templates and data (like Mustache)
 
 ## Install
 
 ```
-  $ npm install odt
+  $ npm install node-odt
 ```
 
 ## Usage
@@ -30,10 +30,12 @@ const file = fs.createReadStream(path.resolve("./test", "test.odt"));
 
 const odtHandle = new odtTemplate(file);
 const data = {
-    nom: "YU",
-    prenom: "Qiang"
+    nom: "Docy",
+    prenom: "Daniel"
 };
 
+
+//type: "nodebuffer", "base64", "stream"
 odtHandle
     .renderDoc(data, { type: "stream" })
     .then((t2) => {
@@ -46,7 +48,7 @@ odtHandle
 ```
 Output odt file:
 ```odt
-Prenom: Qiang,
-Nom: YU
+Prenom: Daniel,
+Nom: Docy
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "node-odt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": ".odt generator working with templates and data (like Mustache)",
   "main": "lib/index.js",
   "scripts": {
