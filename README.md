@@ -14,34 +14,31 @@ OpenDocument Text(.odt) generator working with templates and data (like Mustache
 In the template:
 ```odt
 Prenom: {prenom},
-Nom: {nom}
+Nom: {nom},
+Numero: {contact_numero}
 ```
 
 Code:
 ```js
 
-const fs = require("fs");
-const path = require("path");
-
-const odtTemplate = require("./../lib/index");
-const uuid = require("node-uuid");
-
-const file = fs.createReadStream(path.resolve("./test", "test.odt"));
-
 const odtHandle = new odtTemplate(file);
+
 const data = {
     nom: "Docy",
-    prenom: "Daniel"
+    prenom: "Daniel",
+    contact:{
+        numero:"12345678"
+    }
 };
+
 
 
 //type: "nodebuffer", "base64", "stream"
 odtHandle
     .renderDoc(data, { type: "stream" })
-    .then((t2) => {
-        // fs.writeFileSync(path.resolve(path.resolve("./test", `${uuid.v4()}.odt`)), t2);
-        t2.pipe(fs.createWriteStream(path.resolve(path.resolve("./test", `${uuid.v4()}.odt`))));
-        odtHandle.toPdf();
+    .then((res) => {
+        // fs.writeFileSync("output.odt", res);
+        res.pipe(fs.createWriteStream("output.odt"));
     });
 
 
@@ -49,6 +46,6 @@ odtHandle
 Output odt file:
 ```odt
 Prenom: Daniel,
-Nom: Docy
+Nom: Docy,
+Numero: 12345678
 ```
-
