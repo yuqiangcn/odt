@@ -21,7 +21,7 @@ Numero: {contact_numero}
 Code:
 ```js
 
-const odtHandle = new odtTemplate(file);
+const file = fs.createReadStream(path.resolve("./test", "test.odt"));
 
 const data = {
     nom: "Docy",
@@ -31,7 +31,7 @@ const data = {
     }
 };
 
-
+const odtHandle = new odtTemplate(file);
 
 //type: "nodebuffer", "base64", "stream"
 odtHandle
