@@ -11,7 +11,7 @@ OpenDocument Text(.odt) generator working with templates and data (like Mustache
 
 ## Usage
 
-In the template:
+Template:
 ```odt
 Prenom: {prenom},
 Nom: {nom},
@@ -32,7 +32,7 @@ const data = {
 
 const file = fs.createReadStream(path.resolve("./test", "test.odt"));
 
-//file can be stream or buffer
+//file can be a stream or a buffer
 const odtHandle = new odtTemplate(file);
 
 //Output type: "nodebuffer", "base64", "stream"
